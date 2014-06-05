@@ -2,6 +2,22 @@
 <head>
   <title>Sina's Sweet Travel Map</title>
   <link rel="stylesheet" type="text/css" href="style/style.css">
+
+  <script type="text/javascript"
+      src="js/map.js">
+  </script>
+  <script type="text/javascript">
+    function initialize() {
+      var mapOptions = {
+        center: new google.maps.LatLng(40.7590615, -73.969231,12),
+        zoom: 11
+      };
+      var map = new google.maps.Map(document.getElementById("map-canvas"),
+          mapOptions);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+
 </head>
 <body>
   <div id="wrap">
@@ -18,7 +34,7 @@
         Here's a description of what this app is supposed to do.
       </div>
     </div>
-    <div id="map">
+    <div id="map-canvas">
       Map map map map map
     </div>
   </div>

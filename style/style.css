@@ -15,9 +15,8 @@
   background-color: blue;
 }
 
-#map {
-  height: 500px;
-  background-color: red;
+#map-canvas {
+  height: 800px;
 }
 
 #wrap h1 {
