@@ -24,7 +24,7 @@ function initialize() {
     $.getJSON(instagramUrl, access_parameters, onDataLoaded);
   }
 
-  // Runs when we get a response from Instagram
+  // Runs when we get a response from Instagram and adds all the images with location information to the map
   onDataLoaded = function(instagram_data) {  
 
     // If the HTTP response code is 200 OK
@@ -38,19 +38,13 @@ function initialize() {
         // Iterate over the array of user's photos
         for (var i in photos ){
 
-          // Create a new img element with the src of the photo
-          // var photo = $("<img>").attr("src", photos[i].images.thumbnail.url)
-
-          // photo.location.latitude
-          // photo.location.longitude
-
-          // Append the img to the DOM
-          // $('#target').append(photo);
-
+          // Set the individual photo to a variable
           var photo = photos[i];
 
+          // If the photo has a location property, we will create a new custom marker and bind it to the map
           if(photo.location) {
 
+            // Create a new object literal to store the photo's properties
             var image = {
                 url: photos[i].images.thumbnail.url,
                 size: new google.maps.Size(50, 50),
@@ -59,13 +53,25 @@ function initialize() {
                 scaledSize: new google.maps.Size(50, 50)
               };
 
+            // Stores the photo's lat/long
             var myLatLng = new google.maps.LatLng(photo.location.latitude, photo.location.longitude);
 
+            // Create the new marker and bind it to the map
             var customMarker = new google.maps.Marker({
                   position: myLatLng,
                   map: map,
                   icon: image
               });
+
+            // When an image is clicked, zoom in on the photo
+            (function (customMarker) {
+
+              google.maps.event.addListener(customMarker, 'click', function() {
+                  map.setZoom(map.getZoom() * 2);
+                  map.setCenter(customMarker.getPosition());
+                });
+
+            })(customMarker);
             
           }
 
@@ -80,28 +86,6 @@ function initialize() {
       $('#target').append("Something happened! Instagram says: " + error);
     }
   }
-
-  var image = {
-      url: "http://scontent-b.cdninstagram.com/hphotos-xfp1/t51.2885-15/10362225_646900952063007_1845591211_a.jpg",
-      size: new google.maps.Size(50, 50),
-      origin: new google.maps.Point(0,0),
-      anchor: new google.maps.Point(25, 25),
-      scaledSize: new google.maps.Size(50, 50)
-    };
-
-  var myLatLng = new google.maps.LatLng(40.764641, -73.994225);
-
-  var customMarker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        icon: image
-    });
-
-  // When an image is clicked, zoom in on the photo
-  google.maps.event.addListener(customMarker, 'click', function() {
-      map.setZoom(16);
-      map.setCenter(customMarker.getPosition());
-    });
 
   // Call the grabImages function to start the whole process
   grabImages(access_parameters);
