@@ -28,7 +28,7 @@ function initialize() {
   onDataLoaded = function(instagram_data) {  
 
     // If the HTTP response code is 200 OK
-    if(instagram_data.meta.code == 200) {
+    if(instagram_data.meta.code == 200 ) {
 
       var photos = instagram_data.data;
 
@@ -37,6 +37,12 @@ function initialize() {
 
         // Iterate over the array of user's photos
         for (var i in photos ){
+
+          // Create a new img element with the src of the photo
+          var photo = $("<img>").attr("src", photos[i].images.low_resolution.url)
+
+          // Append the img to the DOM
+          $('#target').append(photo);
 
           // Set the individual photo to a variable
           var photo = photos[i];
@@ -84,6 +90,13 @@ function initialize() {
       // Display error if the HTTP response code is not 200 OK
       var error = instagram_data.meta.error_message;
       $('#target').append("Something happened! Instagram says: " + error);
+    }
+
+    if(instagram_data.pagination.next_max_id != undefined) {
+
+      var instagramUrl = 'https://api.instagram.com/v1/users/17438650/media/recent/?callback=?&max_id=' + instagram_data.pagination.next_max_id;
+
+      $.getJSON(instagramUrl, access_parameters, onDataLoaded);
     }
   }
 
