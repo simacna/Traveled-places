@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
+  
+
+  root 'home#index'
 
   # root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
