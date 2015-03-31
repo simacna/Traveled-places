@@ -7,12 +7,12 @@ class UsersController < ApplicationController
   end
 
   def oauth_callback
-  	binding.pry
+  	
     response = Instagram.get_access_token(params[:code], :redirect_uri => "http://localhost:3000/callback")
     session[:access_token] = response.access_token
 
-		
+	
 	redirect_to '/map'
-	end
+  end
 
 end
