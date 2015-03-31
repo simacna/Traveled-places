@@ -25,6 +25,7 @@ function initialize() {
 //     $.getJSON(instagramUrl, access_parameters, onDataLoaded);
 //   }
 
+
 	// Runs when we get a response from Instagram
   onDataLoaded = function(instagram_data) {  
 
