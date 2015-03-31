@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   		 session[:access_token] = response.access_token
   		
 
-		binding.pry
-		redirect "/nav"
+		
+		redirect_to '/'
 	end
 end

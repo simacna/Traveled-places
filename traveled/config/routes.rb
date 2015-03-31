@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
+  root 'home#index'
   
   get 'oauth' => 'users#oauth'
   # get "/" => "welcome#index"
 
-  root 'home#index'
+  
 
   get 'callback' => 'users#oauth_callback'
 
