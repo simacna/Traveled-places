@@ -51,7 +51,7 @@ function initialize() {
 
       // Iterate over the array of user's photos
       for (var i in photos ){
-				
+				 
         //Individual data for each iteradated photo
 				var photo = photos[i]
         console.log(photo);
@@ -59,7 +59,7 @@ function initialize() {
 			
 				//if photo does have property = location
 				
-				if(photo.location){
+
         	
 					var image = {
 			      url: photos[i].image_url,
@@ -77,14 +77,14 @@ function initialize() {
 			        icon: image
 			    });
 			
-    			(function(customMarker){
-    				google.maps.event.addListener(customMarker, 'mouseover',function(){
-    					map.setZoom(map.getZoom() + 1);
-    					map.setCenter(customMarker.getPosition());
-    				});
-    			})(customMarker);
+    			// (function(customMarker){
+    			// 	google.maps.event.addListener(customMarker, 'mouseover',function(){
+    			// 		map.setZoom(map.getZoom() + 1);
+    			// 		map.setCenter(customMarker.getPosition());
+    			// 	});
+    			// })(customMarker);
 
-       }
+       
       }
     } else {
       // Display error if no photos in the array
@@ -98,4 +98,4 @@ function initialize() {
 }
 
 
-google.maps.event.addDomListener(window, 'load', initialize);
+$(document).ready(initialize);
