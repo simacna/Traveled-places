@@ -1,8 +1,17 @@
 class UsersController < ApplicationController
 
-	def oauth_callback
-		insta_code = params["code"]
-		binding.pry
+	def oauth
+		redirect_to Instagram.authorize_url(:redirect_uri => "http://localhost:3000/callback")
+	end
 
+	def oauth_callback
+		# insta_code = params["code"]
+
+		 response = Instagram.get_access_token(params[:code], :redirect_uri => "http://localhost:3000/callback")
+  		 session[:access_token] = response.access_token
+  		
+
+		binding.pry
+		redirect "/nav"
 	end
 end

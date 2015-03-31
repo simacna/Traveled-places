@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   
-  
+  get 'oauth' => 'users#oauth'
+  # get "/" => "welcome#index"
 
   root 'home#index'
 
