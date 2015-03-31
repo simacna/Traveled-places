@@ -10,20 +10,20 @@ function initialize() {
       mapOptions);
 
  
-//Instagram user ID
+// //Instagram user ID
 
-  var clientId = 'ec4d7008d30749028591badfc1dedfb5';
-  var access_parameters = {client_id: clientId};
+//   var clientId = '17438650.1fb234f.d7348564585c42ffa461e2f9d17326ee';
+//   var access_parameters = {client_id: clientId};
 
-  // Makes an HTTP request to the Instagram API recent media 
-  grabImages = function(access_parameters) {  
+//   // Makes an HTTP request to the Instagram API recent media 
+//   grabImages = function(access_parameters) {  
 
-    // URL is hard-coded for one user
-    var instagramUrl = 'https://api.instagram.com/v1/users/17438650/media/recent/?callback=?';
+//     // URL is hard-coded for one user
+//     var instagramUrl = 'https://api.instagram.com/v1/users/17438650/media/recent/?callback=?';
 
-    // Make the HTTP request and then call onDataLoaded
-    $.getJSON(instagramUrl, access_parameters, onDataLoaded);
-  }
+//     // Make the HTTP request and then call onDataLoaded
+//     $.getJSON(instagramUrl, access_parameters, onDataLoaded);
+//   }
 
 	// Runs when we get a response from Instagram
   onDataLoaded = function(instagram_data) {  
