@@ -12,6 +12,6 @@ class UsersController < ApplicationController
   		
 
 		
-		redirect_to '/'
+		redirect_to 'map'
 	end
 end
