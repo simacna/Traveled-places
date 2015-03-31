@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   
 
   root 'home#index'
+  get 'map' => 'welcome#index'
+  get 'oauth' => 'users#oauth'
+  get 'callback' => 'users#oauth_callback'
 
   # root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

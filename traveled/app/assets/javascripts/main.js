@@ -16,14 +16,14 @@ function initialize() {
   var access_parameters = {client_id: clientId};
 
   // Makes an HTTP request to the Instagram API recent media 
-  grabImages = function(access_parameters) {  
+  // grabImages = function(access_parameters) {  
 
-    // URL is hard-coded for one user
-    var instagramUrl = 'https://api.instagram.com/v1/users/17438650/media/recent/?callback=?';
+  //   // URL is hard-coded for one user
+  //   var instagramUrl = 'https://api.instagram.com/v1/users/17438650/media/recent/?callback=?';
 
-    // Make the HTTP request and then call onDataLoaded
-    $.getJSON(instagramUrl, access_parameters, onDataLoaded);
-  }
+  //   // Make the HTTP request and then call onDataLoaded
+  //   $.getJSON(instagramUrl, access_parameters, onDataLoaded);
+  // }
 
 	// Runs when we get a response from Instagram
   onDataLoaded = function(instagram_data) {  
