@@ -3,8 +3,7 @@ class PhotosController < ApplicationController
 	def index
 
 		client = Instagram.client(:access_token => session[:access_token])
-		# user = client.user
-	 	#html = "<h1>#{user.username}'s recent media</h1>"
+		
 
 	 	photos = []
 
