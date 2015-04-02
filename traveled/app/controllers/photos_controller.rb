@@ -14,6 +14,7 @@ class PhotosController < ApplicationController
 	      photo[:longitude] = media_item.location.longitude
 
 		  photos << photo
+
 	    end
 
 	    respond_to do |format|
@@ -21,10 +22,12 @@ class PhotosController < ApplicationController
 			format.json {render json: photos}
 		end
 
+		
+
 
 	end
 
-	
+	# binding.pry
 
 
 

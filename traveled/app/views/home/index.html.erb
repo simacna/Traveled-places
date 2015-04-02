@@ -1,5 +1,44 @@
 <!-- This will send the user to routes (get 'oauth' => 'users#oauth') -->
-<div id="sign_in">
-	<a href="/oauth"> Sign into your instagram </a>
+<style>
+* {
+	background-color: #EEF7FF;
+}
+
+#instagram {
+	text-decoration: none;
+	color: black;
+}
+
+#outter {
+	width: 100%;
+}
+#inner {
+	padding-top: 25%;
+	width: 13%;
+	margin: 0 auto;
+}
+#instagram {
+	padding-top: 150px;
+	margin-top, margin-bottom: 0;
+	font-family: "Palatino Linotype";
+	border: 2px solid black;
+	border-spacing: 10px;
+	border-radius: 15px;
+	padding: 5px 10px;
+}
+
+a:hover {
+	/*border: 2px solid black;
+	border-spacing: 10px;
+	border-radius: 25px;*/
+	color: #F7505A !important;
+	background-color: white;
+
+}
+</style>
+<div id="outter">
+	<div id="inner">
+		<a href="/oauth" id="instagram"> SIGN INTO YOUR INSTAGRAM </a>
+	</div>
 </div>
 

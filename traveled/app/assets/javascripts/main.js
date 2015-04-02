@@ -9,7 +9,7 @@ function initialize() {
 
   var mapOptions = {
     center: new google.maps.LatLng(40.7590615, -73.969231,12),
-    zoom: 2
+    zoom: 4
   };
 
 
@@ -76,6 +76,8 @@ function initialize() {
 			        map: map,
 			        icon: image
 			    });
+
+          
 			
     			// (function(customMarker){
     			// 	google.maps.event.addListener(customMarker, 'mouseover',function(){
