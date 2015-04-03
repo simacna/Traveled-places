@@ -39,6 +39,8 @@ function initialize() {
 	// Runs when we get a response from Instagram
   onDataLoaded = function(instagram_data) {  
 
+
+
     var photos = instagram_data;
 			
 	 //  var append_image = $("<img>").attr('src', photos[0].images.thumbnail.url);
@@ -77,14 +79,21 @@ function initialize() {
 			        icon: image
 			    });
 
-          
+           //Will set zoom, increment, once hit 3 zooms change picture size to large image
+           var zoom = 0;
 			
-    			// (function(customMarker){
-    			// 	google.maps.event.addListener(customMarker, 'mouseover',function(){
-    			// 		map.setZoom(map.getZoom() + 1);
-    			// 		map.setCenter(customMarker.getPosition());
-    			// 	});
-    			// })(customMarker);
+    			(function(customMarker){
+    				google.maps.event.addListener(customMarker, 'mouseover',function(){
+
+              if(zoom < 3){
+                zoom += 1;
+                map.setZoom(map.getZoom() + 1);
+                map.setCenter(customMarker.getPosition());
+              };
+
+    					
+    				});
+    			})(customMarker);
 
        
       }
