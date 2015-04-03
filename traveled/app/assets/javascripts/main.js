@@ -68,7 +68,7 @@ function initialize() {
 			      size: new google.maps.Size(50, 50),
 			      origin: new google.maps.Point(0,0),
 			      anchor: new google.maps.Point(25, 25),
-			      scaledSize: new google.maps.Size(50, 50)
+			      scaledSize: new google.maps.Size(60, 60)
 			    };
 
 			    var myLatLng = new google.maps.LatLng(photo.latitude, photo.longitude);
@@ -89,10 +89,12 @@ function initialize() {
                 zoom += 1;
                 map.setZoom(map.getZoom() + 1);
                 map.setCenter(customMarker.getPosition());
-              };
-
-    					
-    				});
+               } else {
+                //still can't make image to be large after zoom is no longer smaller than 3
+                  scaledSize: new google.maps.Size(150,150)
+                };
+                 		
+              		});
     			})(customMarker);
 
        
