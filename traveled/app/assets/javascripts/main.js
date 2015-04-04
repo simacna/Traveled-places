@@ -8,8 +8,8 @@ function initialize() {
   });
 
   var mapOptions = {
-    center: new google.maps.LatLng(40.7590615, -73.969231,12),
-    zoom: 3
+    center: new google.maps.LatLng(40.7590615, -99.969231,12),
+    zoom: 4
   };
 
 
