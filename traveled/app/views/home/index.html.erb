@@ -1,7 +1,9 @@
 <!-- This will send the user to routes (get 'oauth' => 'users#oauth') -->
 <style>
-* {
-	background-color: #EEF7FF;
+body {
+	background-image: url("http://i.imgur.com/YY3bLP7.jpg");
+	background-size: cover;
+	font-family: 'Open Sans', sans-serif;
 }
 
 #instagram {
@@ -9,21 +11,26 @@
 	color: black;
 }
 
+h1 {
+	color: white;
+}
+
 #outter {
 	width: 100%;
+	margin: 0 auto;
 }
 #inner {
 	padding-top: 25%;
-	width: 20%;
+	width: 30%;
 	margin: 0 auto;
 }
 #instagram {
 	padding-top: 150px;
 	margin-top, margin-bottom: 0;
-	font-family: "Palatino Linotype";
+	/*font-family: "Palatino Linotype";*/
 	border: 2px solid black;
 	border-spacing: 10px;
-	border-radius: 15px;
+	border-radius: 3px;
 	padding: 5px 10px;
 }
 
@@ -41,12 +48,13 @@ a:hover {
 <script>
 $(document).ready(function(){
 	$('#instagram').hover(function(){
-		$(this).effect('bounce',{times:3}, 50);
+		$(this).effect('bounce',{times:3}, 500);
 	});
 })
 </script>
 <div id="outter">
 	<div id="inner">
+		<h1> See all your Instagram photos on a world map </h1>
 		<a href="/oauth" id="instagram"> SIGN INTO YOUR INSTAGRAM </a>
 	</div>
 </div>
