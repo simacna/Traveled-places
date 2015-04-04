@@ -14,7 +14,7 @@
 }
 #inner {
 	padding-top: 25%;
-	width: %;
+	width: 20%;
 	margin: 0 auto;
 }
 #instagram {
@@ -36,6 +36,15 @@ a:hover {
 
 }
 </style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#instagram').hover(function(){
+		$(this).effect('bounce',{times:3}, 50);
+	});
+})
+</script>
 <div id="outter">
 	<div id="inner">
 		<a href="/oauth" id="instagram"> SIGN INTO YOUR INSTAGRAM </a>
