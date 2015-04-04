@@ -9,7 +9,7 @@ function initialize() {
 
   var mapOptions = {
     center: new google.maps.LatLng(40.7590615, -73.969231,12),
-    zoom: 4
+    zoom: 3
   };
 
 
@@ -85,7 +85,7 @@ function initialize() {
     			(function(customMarker){
     				google.maps.event.addListener(customMarker, 'mouseover',function(){
 
-              if(zoom < 3){
+              if(zoom < 8){
                 zoom += 1;
                 map.setZoom(map.getZoom() + 1);
                 map.setCenter(customMarker.getPosition());
