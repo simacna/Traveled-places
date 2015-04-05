@@ -29,6 +29,10 @@ class PhotosController < ApplicationController
 
 	  #   end
 
+	  # pseudo code:
+
+	  # find out what client.user_recent_media(777), specifically 777 is
+
 	    for media_item in client.user_recent_media
 	      photo = {}
 	      photo[:image_url] = media_item.images.thumbnail.url
