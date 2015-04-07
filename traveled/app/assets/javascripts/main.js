@@ -85,6 +85,7 @@ function initialize() {
               if(zoom < 8){
                 console.log(customMarker.position); //trying to print on console to figure out how to access image.scaledSize
                 //in order to access each images scaledSize/zoomed property 
+                //there seems to be a different when the variable is ex. scaledSize: new google.maps.size vs var customMarker, hm
                 zoom += 1;
                 map.setZoom(map.getZoom() + 1);
                 map.setCenter(customMarker.getPosition());
