@@ -35,7 +35,6 @@ function initialize() {
 //     $.getJSON(instagramUrl, access_parameters, onDataLoaded);
 //   }
 
-
 	// Runs when we get a response from Instagram
   onDataLoaded = function(instagram_data) {  
 
@@ -61,8 +60,6 @@ function initialize() {
 			
 				//if photo does have property = location
 				
-
-        	
 					var image = {
 			      url: photos[i].image_url,
 			      size: new google.maps.Size(50, 50),
@@ -86,12 +83,14 @@ function initialize() {
     				google.maps.event.addListener(customMarker, 'mouseover',function(){
 
               if(zoom < 8){
+                console.log(customMarker.position); //trying to print on console to figure out how to access image.scaledSize
+                //in order to access each images scaledSize/zoomed property 
                 zoom += 1;
                 map.setZoom(map.getZoom() + 1);
                 map.setCenter(customMarker.getPosition());
                } else {
-                //still can't make image to be large after zoom is no longer smaller than 3
-                  scaledSize: new google.maps.Size(150,150)
+                // //still can't make image to be large after zoom is no longer smaller than 3
+                //   scaledSize: new google.maps.Size(150,150)
                 };
                  		
               		});
