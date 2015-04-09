@@ -4,8 +4,11 @@ function initialize() {
       type: 'GET'
    }).done(function(data) {
       console.log(data);
+      console.log("The below is onDataLoaded(data)")
       onDataLoaded(data);
   });
+
+
 
   var mapOptions = {
     center: new google.maps.LatLng(40.7590615, -99.969231,12),
@@ -36,12 +39,13 @@ function initialize() {
 //   }
 
 	// Runs when we get a response from Instagram
+
   onDataLoaded = function(instagram_data) {  
 
 
 
     var photos = instagram_data;
-			
+    
 	 //  var append_image = $("<img>").attr('src', photos[0].images.thumbnail.url);
 	
 		// $('#info-left').append(append_image);
@@ -62,11 +66,13 @@ function initialize() {
 				
 					var image = {
 			      url: photos[i].image_url,
-			      size: new google.maps.Size(50, 50),
+			      size: new google.maps.Size(100, 100),
 			      origin: new google.maps.Point(0,0),
 			      anchor: new google.maps.Point(25, 25),
 			      scaledSize: new google.maps.Size(60, 60)
 			    };
+          console.log("below is image object being printed");
+          console.log(image.size);
 
 			    var myLatLng = new google.maps.LatLng(photo.latitude, photo.longitude);
 
@@ -74,6 +80,7 @@ function initialize() {
 			        position: myLatLng,
 			        map: map,
 			        icon: image
+
 			    });
 
            //Will set zoom, increment, once hit 3 zooms change picture size to large image
@@ -89,7 +96,9 @@ function initialize() {
                 zoom += 1;
                 map.setZoom(map.getZoom() + 1);
                 map.setCenter(customMarker.getPosition());
+                animation: google.maps.Animation.DROP;
                } else {
+                  size: new google.maps.Size(70, 70);
                 // //still can't make image to be large after zoom is no longer smaller than 3
                 //   scaledSize: new google.maps.Size(150,150)
                 };
@@ -112,3 +121,4 @@ function initialize() {
 
 
 $(document).ready(initialize);
+
