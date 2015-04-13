@@ -1,4 +1,4 @@
-function initialize() {
+(function(){ function initialize() {
   $.ajax({
       url: 'http://localhost:3000/photos',
       type: 'GET'
@@ -121,4 +121,6 @@ function initialize() {
 
 
 $(document).ready(initialize);
+
+}(); //put function in IFFY - let's see if it changes anything
 
