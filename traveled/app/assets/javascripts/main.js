@@ -79,6 +79,7 @@ function initialize() {
 
 			    var myLatLng = new google.maps.LatLng(photo.latitude, photo.longitude);
 
+          //Below is declaring each custom marker 
 			    var customMarker = new google.maps.Marker({
 			        position: myLatLng,
 			        map: map,
