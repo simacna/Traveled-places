@@ -1,4 +1,4 @@
-(function(){ function initialize() {
+function initialize() {
   $.ajax({
       url: 'http://localhost:3000/photos',
       type: 'GET'
@@ -39,9 +39,11 @@
 //   }
 
 	// Runs when we get a response from Instagram
-//commenting onDataLoaded out to see what happens
+
+  // Previously the variable onDataLoaded was used -- I wasn't sure if this was a js term or a variable; it seems
+  //that it's merely a variable and functions declared this way automatically get called 
   // onDataLoaded = 
-  function(instagram_data) {  
+  load = function(instagram_data) {  
 
 
 
@@ -123,5 +125,5 @@
 
 $(document).ready(initialize);
 
-}(); //put function in IFFY - let's see if it changes anything
+ //put function in IFFY - let's see if it changes anything
 
