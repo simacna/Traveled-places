@@ -39,8 +39,9 @@
 //   }
 
 	// Runs when we get a response from Instagram
-
-  onDataLoaded = function(instagram_data) {  
+//commenting onDataLoaded out to see what happens
+  // onDataLoaded = 
+  function(instagram_data) {  
 
 
 
