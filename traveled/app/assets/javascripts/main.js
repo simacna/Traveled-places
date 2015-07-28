@@ -4,7 +4,7 @@ function initialize() {
       type: 'GET'
    }).done(function(data) {
       console.log(data);
-      console.log("The below is onDataLoaded(data)")
+      console.log("The below is onDataLoaded(data)");
       onDataLoaded(data);
   });
 
@@ -43,11 +43,12 @@ function initialize() {
   // Previously the variable onDataLoaded was used -- I wasn't sure if this was a js term or a variable; it seems
   //that it's merely a variable and functions declared this way automatically get called 
   // onDataLoaded = 
-  load = function(instagram_data) {  
+  onDataLoaded = function(instagram_data) {  
 
 
 
     var photos = instagram_data;
+    console.log(photos);
     
 	 //  var append_image = $("<img>").attr('src', photos[0].images.thumbnail.url);
 	
@@ -72,12 +73,14 @@ function initialize() {
 			      size: new google.maps.Size(100, 100),
 			      origin: new google.maps.Point(0,0),
 			      anchor: new google.maps.Point(25, 25),
-			      scaledSize: new google.maps.Size(60, 60)
+			      scaledSize: new google.maps.Size(70, 70)
 			    };
+
           console.log("below is image object being printed");
           console.log(image.size);
 
-			    var myLatLng = new google.maps.LatLng(photo.latitude, photo.longitude);
+			    var myLatLng = new google.maps.LatLng(photo.latitude, photo.longitude); //going to comment this out and place into the 
+          //var image object literal to see the effects
 
           //Below is declaring each custom marker 
 			    var customMarker = new google.maps.Marker({
@@ -88,10 +91,10 @@ function initialize() {
 			    });
 
            //Will set zoom, increment, once hit 3 zooms change picture size to large image
-           var zoom = 0;
+          var zoom = 0;
 			
     			(function(customMarker){
-    				google.maps.event.addListener(customMarker, 'mouseover',function(){
+    				google.maps.event.addListener(customMarker, 'click',function(){
 
               if(zoom < 8){
                 console.log(customMarker.position); //trying to print on console to figure out how to access image.scaledSize
@@ -102,9 +105,9 @@ function initialize() {
                 map.setCenter(customMarker.getPosition());
                 animation: google.maps.Animation.DROP;
                } else {
-                  size: new google.maps.Size(70, 70);
+                  // size: new google.maps.Size(70, 70);
                 // //still can't make image to be large after zoom is no longer smaller than 3
-                //   scaledSize: new google.maps.Size(150,150)
+                  // image.scaledSize: new google.maps.Size(150,150);
                 };
                  		
               		});
